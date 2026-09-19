@@ -1,0 +1,3 @@
+FFmpeg convert to mp4: ffmpeg -i input.mkv -c:v libx264 -c:a aac output.mp4
+Tar extract archive: tar -xvf archive.tar.gz
+Ripgrep search hidden: rg --hidden --no-ignore "pattern"
