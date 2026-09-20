@@ -24,10 +24,11 @@ if contains $exit_status 0 10 11; and test -n "$relative_file"
             if test $exit_status -eq 10
                 notify-send "Snippet Copied" "$relative_file" -i edit-copy
             else
-                # Virtual press Ctrl+V
+                # Inject Ctrl+V using ydotool (29=KEY_LEFTCTRL, 47=KEY_V)
+                # :1 key down, :0 key up
                 sleep 0.15
-                if not wtype -d 10 -M ctrl -k v -m ctrl >/dev/null 2>&1
-                    notify-send "wtype failed" "Snippet copied to clipboard:\n$relative_file" -i edit-copy
+                if not ydotool key 29:1 47:1 47:0 29:0 >/dev/null 2>&1
+                    notify-send "ydotool failed" "Snippet copied to clipboard:\n$relative_file" -i edit-copy
                     return 1
                 end
             end
