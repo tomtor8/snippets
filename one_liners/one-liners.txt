@@ -1,6 +1,19 @@
-FFmpeg convert to mp4:: ffmpeg -i input.mkv -c:v libx264 -c:a aac output.mp4
-Tar extract archive:: tar -xvf archive.tar.gz
+Archive - tar extract:: tar -xvf archive.tar.gz
+Audio - FFmpeg convert to mp4:: ffmpeg -i input.mkv -c:v libx264 -c:a aac output.mp4
+Audio - MPV music play without window:: mpv --no-video <file.mp3|dir|.>
+Image - batch compress with imagemagick:: mogrify -quality 80 -format jpg *.png
+Pacman - set package as explicit:: pacman -D --asexplicit <package>
+Pacman remove unused packages:: pacman -Qdtq | pacman -Rns -
+Rename - audiofiles from metadata title:: f2 -f '(\d+).*' -r '${1}_{id3.title}{ext}'
+Rename - make lowercase entire filename:: f2 -r '{.lw}'
+Rename - make lowercase only filename:: f2 -r '{f.lw}{ext}'
+Rename - make uppercase only filename:: f2 -r '{f.up}{ext}'
+Rename - remove prepended digits:: f2 -f '^\d{2}-' -r '' -e
+Rename - replace spaces or underscores with - in files:: f2 -f '(_| )+' -r '-' -e
+Rename - replace spaces with _ in directory:: f2 -f '\s+' -r '_' -D
+Rename - replace spaces:: f2 -f '\s+' -r '-' -e
 Ripgrep search hidden:: rg --hidden --no-ignore "pattern"
-Inverted question mark:: ¿
-Inverted exclamation mark:: ¡
-Times / multiplication symbol:: ×
+Symbol - Times / Multiplication:: ×
+Symbol - inverted exclamation mark:: ¡
+Symbol - inverted question mark:: ¿
+YAY - show AUR updates:: yay -Qua
