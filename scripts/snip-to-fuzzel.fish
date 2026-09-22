@@ -4,7 +4,7 @@ set -l snippet_dir "$HOME/.local/share/snippets/code_snips"
 
 if not test -d "$snippet_dir"
     echo "Snippet directory $snippet_dir does not exist."
-    return 1
+    exit 1
 end
 
 # --base-directory forces fd to run inside $snippet_dir and output relative paths
@@ -29,7 +29,7 @@ if contains $exit_status 0 10 11; and test -n "$relative_file"
                 sleep 0.15
                 if not ydotool key 29:1 47:1 47:0 29:0 >/dev/null 2>&1
                     notify-send "ydotool failed" "Snippet copied to clipboard:\n$relative_file" -i edit-copy
-                    return 1
+                    exit 1
                 end
             end
     end
