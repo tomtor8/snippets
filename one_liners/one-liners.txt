@@ -13,7 +13,18 @@ Rename - replace spaces or underscores with - in files:: f2 -f '(_| )+' -r '-' -
 Rename - replace spaces with _ in directory:: f2 -f '\s+' -r '_' -D
 Rename - replace spaces:: f2 -f '\s+' -r '-' -e
 Ripgrep search hidden:: rg --hidden --no-ignore "pattern"
-Symbol - Times / Multiplication:: ×
+Symbol - 1/2:: ½
+Symbol - 1/4:: ¼
+Symbol - 3/4:: ¾
+Symbol - Alpha:: α
+Symbol - Beta:: β
+Symbol - Cent:: ¢
+Symbol - Euro:: €
 Symbol - inverted exclamation mark:: ¡
 Symbol - inverted question mark:: ¿
+Symbol - Micro:: µ
+Symbol - Paragraph:: §
+Symbol - Pi:: π
+Symbol - Pound:: £
+Symbol - Times / Multiplication:: ×
 YAY - show AUR updates:: yay -Qua
