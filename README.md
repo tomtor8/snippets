@@ -6,7 +6,7 @@ Located at `~/.local/share/snippets`
 
 `fd`, `ydotool`
 
-## `ytodool` setup
+## `ydotool` setup
 
 ### 1: Set Up Permissions for /dev/uinput
 
@@ -15,7 +15,7 @@ By default, ydotoold needs write access to /dev/uinput.
 1. Add your user to the input group:  
 
 ```fish
-sudo usermod \-aG input $USER
+sudo usermod -aG input $USER
 ```
 
 2. Create a udev rule to grant access to /dev/uinput for the input group:  
@@ -28,7 +28,7 @@ echo 'KERNEL=="uinput", MODE="0660", GROUP="input", OPTIONS+="static_node=uinput
 
 ```fish
 # modify this command for bash
-sudo udevadm control \--reload-rules; and sudo udevadm trigger
+sudo udevadm control --reload-rules; and sudo udevadm trigger
 ```
 
 4. Reboot for this to take effect.
