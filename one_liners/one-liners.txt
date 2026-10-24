@@ -2,6 +2,7 @@ Archive - tar extract:: tar -xvf archive.tar.gz
 Audio - FFmpeg convert to mp4:: ffmpeg -i input.mkv -c:v libx264 -c:a aac output.mp4
 Audio - MPV music play without window:: mpv --no-video <file.mp3|dir|.>
 Image - batch compress with imagemagick:: mogrify -quality 80 -format jpg *.png
+PDF - merge using Ghostscript:: gs -dQUIET -dBATCH -dNOPAUSE -sDEVICE=pdfwrite -sOutputFile=output.pdf input1.pdf input2.pdf
 Pacman - set package as explicit:: pacman -D --asexplicit <package>
 Pacman remove unused packages:: pacman -Qdtq | pacman -Rns -
 Rename - audiofiles from metadata title:: f2 -f '(\d+).*' -r '${1}_{id3.title}{ext}'
