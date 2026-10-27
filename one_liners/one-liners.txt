@@ -1,6 +1,10 @@
 Archive - tar extract:: tar -xvf archive.tar.gz
 Audio - FFmpeg convert to mp4:: ffmpeg -i input.mkv -c:v libx264 -c:a aac output.mp4
 Audio - MPV music play without window:: mpv --no-video <file.mp3|dir|.>
+Audio - remove all music tags from mp3 file:: eyeD3 --remove-all -- <filename.mp3>
+Audio - batch remove all music tags from mp3 files:: for f in *.mp3; eyeD3 --remove-all -- "$f"; end
+Audio - remove all image tags from mp3 file:: eyeD3 --remove-all-images -- <filename.mp3>
+Audio - batch remove all image tags from mp3 files:: for f in *.mp3; eyeD3 --remove-all-images -- "$f"; end
 Image - batch compress with imagemagick:: mogrify -quality 80 -format jpg *.png
 PDF - merge using Ghostscript:: gs -dQUIET -dBATCH -dNOPAUSE -sDEVICE=pdfwrite -sOutputFile=output.pdf input1.pdf input2.pdf
 Pacman - set package as explicit:: pacman -D --asexplicit <package>
