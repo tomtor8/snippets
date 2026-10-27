@@ -10,6 +10,7 @@ Rename - make lowercase entire filename:: f2 -r '{.lw}'
 Rename - make lowercase only filename:: f2 -r '{f.lw}{ext}'
 Rename - make uppercase only filename:: f2 -r '{f.up}{ext}'
 Rename - remove prepended digits:: f2 -f '^\d{2}-' -r '' -e
+Rename - prepend index double digits starting with 1:: f2 -f '(.*)' -r '{1%02d} $1' -e
 Rename - replace spaces or underscores with - in files:: f2 -f '(_| )+' -r '-' -e
 Rename - replace spaces with _ in directory:: f2 -f '\s+' -r '_' -D
 Rename - replace spaces:: f2 -f '\s+' -r '-' -e
