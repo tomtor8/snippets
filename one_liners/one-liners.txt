@@ -7,6 +7,9 @@ Audio - remove all image tags from mp3 file:: eyeD3 --remove-all-images -- <file
 Audio - batch remove all image tags from mp3 files:: for f in *.mp3; eyeD3 --remove-all-images -- "$f"; end
 Image - batch compress with imagemagick:: mogrify -quality 80 -format jpg *.png
 PDF - merge using Ghostscript:: gs -dQUIET -dBATCH -dNOPAUSE -sDEVICE=pdfwrite -sOutputFile=output.pdf input1.pdf input2.pdf
+PDF - convert all images to pdf A4 landscape:: img2pdf (printf '%s\n' *.{png,PNG,jpg,JPG,jpeg,JPEG} | sort -V) --output somefile.pdf --pagesize "A4^T" --fit into --border 0cm:0cm
+PDF - convert all images to pdf A4 portrait:: img2pdf (printf '%s\n' *.{png,PNG,jpg,JPG,jpeg,JPEG} | sort -V) --output somefile.pdf --pagesize "A4" --fit into --border 0cm:0cm
+PDF - convert all images to pdf without resizing:: img2pdf (printf '%s\n' *.{png,PNG,jpg,JPG,jpeg,JPEG} | sort -V) --output somefile.pdf --border 0cm:0cm
 Pacman - set package as explicit:: pacman -D --asexplicit <package>
 Pacman remove unused packages:: pacman -Qdtq | pacman -Rns -
 Rename - audiofiles from metadata title:: f2 -f '(\d+).*' -r '${1}_{id3.title}{ext}'
